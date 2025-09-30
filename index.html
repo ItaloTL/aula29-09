@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+        table, th, td{
+            border: 3px double black;
+        }
+    </style>
+    
+<h1>Criar uma lista de tarefas: </h1>
+
+<div class="taf">
+<input type="text" id="item" placeholder="Novo item"/>
+<input type="text" id="dt" placeholder="Insira a data de conclusão">
+<button onclick="addtabela()">Adicionar</button>
+<br><br>
+<table id="lista"></table>
+</div>
+
+
+<script>
+    function addtabela() {
+        const texto = document.getElementById('item').value;
+        const data = document.getElementById('dt').value;
+        const novoitem = document.createElement('tr')
+        novoitem.textContent = `${texto} - ${data}`;
+        document.getElementById('lista').appendChild(novoitem);
+        document.getElementById('item').value = '';
+        document.getElementById('dt').value = '';
+    }
+</script>
+
+</body>
+</html>
